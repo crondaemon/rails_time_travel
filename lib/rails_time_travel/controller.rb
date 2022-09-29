@@ -22,7 +22,9 @@ module RailsTimeTravel
     end
 
     def time_travel_return
-      logger.info 'TIME TRAVEL RETURN'
+      if session[:timecop_date]
+        logger.info 'TIME TRAVEL RETURN'
+      end
       Timecop.return
     end
   end
